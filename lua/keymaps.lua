@@ -1,3 +1,4 @@
+local opts = { noremap = true, silent = true }
 -- set leader key to space
 vim.g.mapleader = " "
 
@@ -30,3 +31,22 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+-- Don't leave visual mode after indenting with < or >
+keymap.set("v", ">", ">gv", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+keymap.set("v", "<", "<gv", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+--
+-- Diagnostics
+keymap.set("n", "<C-j>", function()
+	vim.diagnostic.goto_next()
+end, opts)
+
+-- Disable diagnostics
+keymap.set("n", "er", function()
+	vim.diagnostic.disable()
+end, opts)
+
+-- Enable diagnostics
+keymap.set("n", "br", function()
+	vim.diagnostic.enable()
+end, opts)
