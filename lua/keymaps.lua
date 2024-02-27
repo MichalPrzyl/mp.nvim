@@ -35,11 +35,8 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 -- Don't leave visual mode after indenting with < or >
 keymap.set("v", ">", ">gv", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 keymap.set("v", "<", "<gv", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
---
+
 -- Diagnostics
-keymap.set("n", "<C-j>", function()
-	vim.diagnostic.goto_next()
-end, opts)
 
 -- Disable diagnostics
 keymap.set("n", "er", function()
