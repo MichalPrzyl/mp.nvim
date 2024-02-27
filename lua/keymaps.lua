@@ -33,8 +33,14 @@ keymap.set("n", "gp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go t
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
 -- Don't leave visual mode after indenting with < or >
-keymap.set("v", ">", ">gv", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
-keymap.set("v", "<", "<gv", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+keymap.set("v", ">", ">gv", { desc = "Don't leave Visual mode after indent" }) --  Don't leave Visual mode after indent
+keymap.set("v", "<", "<gv", { desc = "Don't leave Visual mode after indent" }) --  Don't leave Visual mode after indent
+
+-- Close buffer
+-- keymap.set("n", "<C-Ww>", ":quit<CR>", { desc = "Close" }) -- this is not correct. I am not sure what keybind I want
+
+-- Save buffer
+keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save" })
 
 -- Diagnostics
 
