@@ -38,6 +38,8 @@ keymap.set("v", "<", "<gv", { desc = "Don't leave Visual mode after indent" }) -
 
 -- Terminal inside nvim
 keymap.set("n", "<leader>cmd", "<cmd>terminal<CR>", { desc = "Open terminal in nvim" })
+-- When you're in terminal inside nvim, remember you can go outside terminal using
+-- Ctrl+\ Ctrl+n. Then you can for example copy something from terminal output!!! Mind-blowing!
 
 -- Close buffer
 -- keymap.set("n", "<C-Ww>", ":quit<CR>", { desc = "Close" }) -- this is not correct. I am not sure what keybind I want
