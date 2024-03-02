@@ -58,3 +58,6 @@ end, opts)
 keymap.set("n", "eR", function()
 	vim.diagnostic.enable()
 end, opts)
+
+-- Pasting in nvim doesn't remove value from register.
+keymap.set("v", "<leader>p", '"_dP')
