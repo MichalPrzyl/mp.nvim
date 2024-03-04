@@ -8,6 +8,10 @@ vim.cmd("set ignorecase")
 vim.cmd("set smartcase")
 vim.cmd("set nowrap")
 
+-- when starting vim, disable diagnostic
+vim.diagnostic.disable()
+
+-- <leader>
 vim.g.mapleader = " "
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
