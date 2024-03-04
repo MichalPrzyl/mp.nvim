@@ -54,12 +54,12 @@ keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save" })
 -- Diagnostics
 
 -- Disable diagnostics
-keymap.set("n", "er", function()
+keymap.set("n", "<leader>dd", function()
 	vim.diagnostic.disable()
 end, opts)
 
 -- Enable diagnostics
-keymap.set("n", "eR", function()
+keymap.set("n", "<leader>de", function()
 	vim.diagnostic.enable()
 end, opts)
 
