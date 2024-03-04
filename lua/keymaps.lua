@@ -10,6 +10,10 @@ local keymap = vim.keymap -- for conciseness
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
+-- when wrap is on, jump just one line up/down
+keymap.set("n", "j", "gj", { desc = "Jump one line down" })
+keymap.set("n", "k", "gk", { desc = "Jump one line up" })
+
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
