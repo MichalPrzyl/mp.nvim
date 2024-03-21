@@ -15,7 +15,8 @@ keymap.set("n", "j", "gj", { desc = "Jump one line down" })
 keymap.set("n", "k", "gk", { desc = "Jump one line up" })
 
 -- clear search highlights
-keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+keymap.set("n", "<leader>hld", ":set nohlsearch<CR>", { desc = "Clear search highlights" })
+keymap.set("n", "<leader>hle", ":set hlsearch<CR>", { desc = "Clear search highlights" })
 
 -- delete single character without copying into register
 -- keymap.set("n", "x", '"_x')
@@ -84,3 +85,14 @@ vim.keymap.set("n", "<leader>h3", function() harpoon:list():select(4) end)
 -- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
+
+
+-- python autoprint
+vim.keymap.set("n", "<leader>print", "iprint(\"\")<ESC>hhpa: {}<ESC>h\"0p")
+
+
+-- replace
+vim.keymap.set("n", "<leader>vp", "viwp")
+
+-- compile python
+vim.keymap.set("n", "<leader>pyt", "<CMD>ToggleTerm<CR>python3 mp_test.py<CR>")
