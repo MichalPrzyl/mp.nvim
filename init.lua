@@ -7,6 +7,7 @@ vim.cmd("set relativenumber")
 vim.cmd("set ignorecase")
 vim.cmd("set smartcase")
 vim.cmd("set nowrap")
+vim.cmd("set autochdir") -- autochanging dir
 
 -- when starting vim, disable diagnostic
 vim.diagnostic.disable()
