@@ -86,10 +86,8 @@ vim.keymap.set("n", "<leader>h3", function() harpoon:list():select(4) end)
 vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
 
-
 -- python autoprint
 vim.keymap.set("n", "<leader>print", "iprint(\"\")<ESC>hhpa: {}<ESC>h\"0p")
-
 
 -- replace
 vim.keymap.set("n", "<leader>vp", "viwp")
