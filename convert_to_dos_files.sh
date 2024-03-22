@@ -1,3 +1,5 @@
+# Script to convert all files listed below
+# from Windows format to UNIX format
 export USER=michal
 export NVIM_CONF_PATH=/home/$USER/.config/nvim
 export NVIM_CONF_PATH2=/home/$USER/.local/share/nvim
