@@ -94,3 +94,18 @@ vim.keymap.set("n", "<leader>vp", "viwp")
 
 -- compile python
 vim.keymap.set("n", "<leader>pyt", "<CMD>ToggleTerm<CR>python3 mp_test.py<CR>")
+
+-- automatic sarch under cursor
+local telescope_builtin = require("telescope.builtin")
+local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
+vim.keymap.set("n", "<leader>seh", "yiw/<C-r>\"<CR>N")
+vim.keymap.set("n", "<leader>seg", live_grep_args_shortcuts.grep_word_under_cursor)
+
+-- same but in Visual Mode
+vim.keymap.set("v", "<leader>seh", "y/<C-r>\"<CR>N")
+vim.keymap.set("v", "<leader>seg", live_grep_args_shortcuts.grep_visual_selection)
+
+-- copy to system clipboard
+keymap.set("n", "<C-c>", "\"+yiw")
+keymap.set("v", "<C-c>", "\"+y")
+
