@@ -106,6 +106,9 @@ vim.keymap.set("v", "<leader>seh", "y/<C-r>\"<CR>N")
 vim.keymap.set("v", "<leader>seg", live_grep_args_shortcuts.grep_visual_selection)
 
 -- copy to system clipboard
-keymap.set("n", "<C-c>", "\"+yiw")
-keymap.set("v", "<C-c>", "\"+y")
+vim.keymap.set("n", "<C-c>", "\"+yiw")
+vim.keymap.set("v", "<C-c>", "\"+y")
+
+-- recent files
+vim.keymap.set("n", "<leader>rec", "<CMD>lua require('telescope').extensions.recent_files.pick()<CR>")
 
