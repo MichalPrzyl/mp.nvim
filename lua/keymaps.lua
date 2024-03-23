@@ -112,3 +112,9 @@ vim.keymap.set("v", "<C-c>", "\"+y")
 -- recent files
 vim.keymap.set("n", "<leader>rec", "<CMD>lua require('telescope').extensions.recent_files.pick()<CR>")
 
+-- Toggle auto surround
+-- TODO: Get this done already...
+-- References:
+-- https://neovim.discourse.group/t/how-to-disable-builtin-plugins/787
+vim.keymap.set("n", "<leader>sur", "")
+
