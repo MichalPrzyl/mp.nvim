@@ -116,5 +116,15 @@ vim.keymap.set("n", "<leader>rec", "<CMD>lua require('telescope').extensions.rec
 -- TODO: Get this done already...
 -- References:
 -- https://neovim.discourse.group/t/how-to-disable-builtin-plugins/787
+
+-- ready for surround toggle but I have no idea how to do this
 vim.keymap.set("n", "<leader>sur", "")
 
+-- Run python script
+vim.keymap.set("n", "<C-C><C-P>", ":w | !python3 '%:p'<CR>")
+vim.keymap.set("i", "<C-C><C-P>", "<ESC>:w | !python3 '%:p'<CR>")
+
+
+-- Run bash script
+vim.keymap.set("n", "<C-C><C-B>", ":w | !/bin/bash '%:p'<CR>")
+vim.keymap.set("i", "<C-C><C-B>", "<ESC>:w | !/bin/bash '%:p'<CR>")
