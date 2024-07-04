@@ -90,7 +90,7 @@ vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
 vim.keymap.set("n", "<leader>print", "iprint(\"\")<ESC>hhpa: {}<ESC>h\"0p")
 
 -- replace
-vim.keymap.set("n", "<leader>vp", "viwp")
+vim.keymap.set("n", "<leader>vp", "viwpyiw")
 
 -- compile python
 vim.keymap.set("n", "<leader>pyt", "<CMD>ToggleTerm<CR>python3 mp_test.py<CR>")
@@ -128,3 +128,47 @@ vim.keymap.set("i", "<C-C><C-P>", "<ESC>:w | !python3 '%:p'<CR>")
 -- Run bash script
 vim.keymap.set("n", "<C-C><C-B>", ":w | !/bin/bash '%:p'<CR>")
 vim.keymap.set("i", "<C-C><C-B>", "<ESC>:w | !/bin/bash '%:p'<CR>")
+
+-- Document symbols
+vim.keymap.set("n", "<leader>ds", ":Telescope lsp_document_symbols<CR>")
+
+-- Workdir symbols
+vim.keymap.set("n", "<leader>ws", ":Telescope lsp_workspace_symbols query=")
+vim.keymap.set("n", "<leader>dws", ":Telescope lsp_dynamic_workspace_symbols<CR>")
+
+-- Center after back from definition
+vim.keymap.set("n", "<C-o>", "<C-o>zz")
+
+-- Center after going to end of file
+vim.keymap.set("n", "G", "Gzz")
+
+-- Open definition in split view
+vim.keymap.set("n", "<leader>gd", function()
+  vim.cmd("vsplit")
+  vim.cmd("wincmd l")
+  vim.lsp.buf.definition()
+  vim.defer_fn(function()
+    vim.cmd("normal! zz")
+  end, 100) -- opóźnienie w milisekundach
+end, { noremap = true, silent = true })
+
+-- Select whote line from start to end
+vim.keymap.set("n", "<leader>ss", "^v$h")
+
+-- Move whole lines up and down
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
+
+-- Open Explorer
+vim.keymap.set("n", "<leader>e", ":Ex<CR>", {})
+
+-- Split with Explorer
+vim.keymap.set("n", "<leader>ve", ":Ve<CR><C-w>x<C-W>l", {})
+
+-- Split horizontally with Explorer
+vim.keymap.set("n", "<leader>vs", ":Se<CR><C-w>x<C-W>j", {})
+
+-- Git blame toogle
+vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", {})
