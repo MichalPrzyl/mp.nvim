@@ -5,7 +5,7 @@ return {
     config = true,
   },
 
-  {
-    "dapt4/vim-autoSurround",
-  },
+  -- {
+  --   "dapt4/vim-autoSurround",
+  -- },
 }
