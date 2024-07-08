@@ -7,6 +7,7 @@ vim.cmd("set relativenumber")
 vim.cmd("set ignorecase")
 vim.cmd("set smartcase")
 vim.cmd("set nowrap")
+vim.g.netrw_banner = 0 -- Disable banner when opening Explore mode (just use <C-I> to enable it)
 -- vim.cmd("set autochdir") -- autochanging dir
 
 -- when starting vim, disable diagnostic
