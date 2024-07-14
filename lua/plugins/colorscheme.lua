@@ -8,10 +8,12 @@ colorschemes = {
 	"0. gruvbox",
 	"1. nightfly",
 	"2. tokyonight",
+	"3. challenger_deep",
 }
+
 --
 -- MAIN SCHEME CHOICE
-colorscheme = 1
+colorscheme = 0
 -- MAIN SCHEME CHOICE
 --
 
@@ -70,6 +72,15 @@ elseif colorscheme == 2 then
 			})
 			-- load the colorscheme here
 			vim.cmd([[colorscheme tokyonight]])
+		end,
+	}
+elseif colorscheme == 3 then
+	return {
+		"challenger-deep-theme/vim",
+		priority = 1000, -- make sure to load this before all the other start plugins
+		config = function()
+			-- load the colorscheme here
+			vim.cmd([[colorscheme challenger_deep]])
 		end,
 	}
 end
