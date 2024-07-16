@@ -9,11 +9,13 @@ colorschemes = {
 	"1. nightfly",
 	"2. tokyonight",
 	"3. challenger_deep",
+	"4. shades-of-purple",
+  "5. dracula"
 }
 
 --
 -- MAIN SCHEME CHOICE
-colorscheme = 0
+colorscheme = 5
 -- MAIN SCHEME CHOICE
 --
 
@@ -81,6 +83,24 @@ elseif colorscheme == 3 then
 		config = function()
 			-- load the colorscheme here
 			vim.cmd([[colorscheme challenger_deep]])
+		end,
+	}
+elseif colorscheme == 4 then
+	return {
+		"Rigellute/shades-of-purple.vim",
+		priority = 1000, -- make sure to load this before all the other start plugins
+		config = function()
+			-- load the colorscheme here
+			vim.cmd([[colorscheme shades_of_purple]])
+		end,
+	}
+elseif colorscheme == 5 then
+	return {
+		"Mofiqul/dracula.nvim",
+		priority = 1000, -- make sure to load this before all the other start plugins
+		config = function()
+			-- load the colorscheme here
+			vim.cmd([[colorscheme dracula]])
 		end,
 	}
 end
