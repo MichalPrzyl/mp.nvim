@@ -15,7 +15,7 @@ colorschemes = {
 
 --
 -- MAIN SCHEME CHOICE
-colorscheme = 5
+colorscheme = 0
 -- MAIN SCHEME CHOICE
 --
 
