@@ -178,3 +178,28 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", {})
 vim.keymap.set("n", "<C-h>", "<C-w>h", {})
 vim.keymap.set("n", "<C-j>", "<C-w>j", {})
 vim.keymap.set("n", "<C-k>", "<C-w>k", {})
+
+-- change tabs quicker
+keymap.set("n", "L", "<cmd>tabn<CR>", { desc = "Go to next tab", noremap = true}) --  go to next tab
+keymap.set("n", "H", "<cmd>tabp<CR>", { desc = "Go to previous tab", noremap = true }) --  go to previous tab
+
+
+-- set cc=80
+keymap.set("n", "<leader>cc", ":set cc=80 <CR>", { desc = "Set cc=80", noremap = true })
+
+-- remove whitespaces at the end of the lines
+keymap.set("v", "<leader>rw", ":s/\\s\\+$//<CR>", { desc = "Remove whitespaces at the end of the line", noremap = true })
+
+-- change tabs quicker
+keymap.set("n", "L", "<cmd>tabn<CR>", { desc = "Go to next tab", noremap = true}) --  go to next tab
+keymap.set("n", "H", "<cmd>tabp<CR>", { desc = "Go to previous tab", noremap = true }) --  go to previous tab
+
+
+-- set cc=80
+keymap.set("n", "<leader>cc", ":set cc=80 <CR>", { desc = "Set cc=80", noremap = true })
+
+-- remove whitespaces at the end of the lines
+keymap.set("v", "<leader>rw", ":s/\\s\\+$//<CR>", { desc = "Remove whitespaces at the end of the line", noremap = true })
+
+-- HopWord
+keymap.set("n", "s", ":HopWord<CR>", { desc = "HopWord Toggle", noremap = true })
