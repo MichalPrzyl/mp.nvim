@@ -23,7 +23,6 @@ return {
 			}
 		end,
 	},
-	-- requires = {
 	{
 		"rcarriga/nvim-dap-ui",
 		requires = { "mfussenegger/nvim-dap" }, -- upewnij się, że jest zależność od 'nvim-dap'
