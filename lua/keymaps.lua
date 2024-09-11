@@ -208,6 +208,7 @@ keymap.set("n", "s", ":HopWord<CR>", { desc = "HopWord Toggle", noremap = true }
 vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
 vim.api.nvim_set_keymap('n', '<F5>', ":lua require'dap'.continue()<CR>", {noremap = true, silent = true})
 
+-- debugging python
 -- set breakpoint
 vim.api.nvim_set_keymap('n', '<F9>', ":lua require'dap'.toggle_breakpoint()<CR>", {noremap = true, silent = true})
 

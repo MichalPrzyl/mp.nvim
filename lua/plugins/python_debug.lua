@@ -3,21 +3,30 @@ return {
 		"mfussenegger/nvim-dap",
 		config = function()
 			local dap = require("dap")
+			require("dap").set_log_level("DEBUG")
 
 			dap.adapters.python = {
 				type = "executable",
-				command = "/home/michal/Projects/django-nvim-debugger/venv/bin/python3.12",
+				command = "/home/michal/Projects/django-nvim-debugger/venv/bin/python",
 				args = { "-m", "debugpy.adapter" },
 			}
 
+      -- If debugging django proj:
+      --  - change 'program' attribute comment
+      --  - comment 'args', 'django' attributes
 			dap.configurations.python = {
 				{
 					type = "python",
 					request = "launch",
-					name = "Launch Program",
-					program = "${file}", -- python file to debug
+					name = "Launch Django Server",
+          -- If debugging normal files, not django project, just change comments
+          -- on program attribute value
+					program = "/home/michal/Projects/django-nvim-debugger/backend/manage.py", -- used with django proj
+          -- program = "${file}", -- used with files
+					args = { "runserver", "--noreload", "0.0.0.0:8000" }, -- Parametry do uruchomienia serwera Django
+					django = true, -- Włączenie trybu Django
 					pythonPath = function()
-						return "/home/michal/Projects/django-nvim-debugger/venv/bin/python3.12"
+				        return "/home/michal/Projects/django-nvim-debugger/venv/bin/python"
 					end,
 				},
 			}
