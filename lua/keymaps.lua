@@ -203,3 +203,15 @@ keymap.set("v", "<leader>rw", ":s/\\s\\+$//<CR>", { desc = "Remove whitespaces a
 
 -- HopWord
 keymap.set("n", "s", ":HopWord<CR>", { desc = "HopWord Toggle", noremap = true })
+
+
+vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
+vim.api.nvim_set_keymap('n', '<F5>', ":lua require'dap'.continue()<CR>", {noremap = true, silent = true})
+
+-- set breakpoint
+vim.api.nvim_set_keymap('n', '<F9>', ":lua require'dap'.toggle_breakpoint()<CR>", {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<F10>', ":lua require'dap'.step_over()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<F11>', ":lua require'dap'.step_into()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<F12>', ":lua require'dap'.step_out()<CR>", {noremap = true, silent = true})
+
