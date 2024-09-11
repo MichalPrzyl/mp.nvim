@@ -15,7 +15,7 @@ return {
 					type = "python",
 					request = "launch",
 					name = "Launch Program",
-					program = "script.py", -- python file to debug
+					program = "${file}", -- python file to debug
 					pythonPath = function()
 						return "/home/michal/Projects/django-nvim-debugger/venv/bin/python3.12"
 					end,
