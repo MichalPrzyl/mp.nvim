@@ -87,7 +87,7 @@ vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
 
 -- python autoprint
-vim.keymap.set("n", "<leader>print", "iprint(\"\")<ESC>hhpa: {}<ESC>h\"0p")
+vim.keymap.set("n", "<leader>pr", "oprint(f\"\")<ESC>hhpa: {}<ESC>h\"0p")
 
 -- replace
 vim.keymap.set("n", "<leader>vp", "viwpyiw")
@@ -183,17 +183,8 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", {})
 keymap.set("n", "L", "<cmd>tabn<CR>", { desc = "Go to next tab", noremap = true}) --  go to next tab
 keymap.set("n", "H", "<cmd>tabp<CR>", { desc = "Go to previous tab", noremap = true }) --  go to previous tab
 
-
--- set cc=80
-keymap.set("n", "<leader>cc", ":set cc=80 <CR>", { desc = "Set cc=80", noremap = true })
-
 -- remove whitespaces at the end of the lines
 keymap.set("v", "<leader>rw", ":s/\\s\\+$//<CR>", { desc = "Remove whitespaces at the end of the line", noremap = true })
-
--- change tabs quicker
-keymap.set("n", "L", "<cmd>tabn<CR>", { desc = "Go to next tab", noremap = true}) --  go to next tab
-keymap.set("n", "H", "<cmd>tabp<CR>", { desc = "Go to previous tab", noremap = true }) --  go to previous tab
-
 
 -- set cc=80
 keymap.set("n", "<leader>cc", ":set cc=80 <CR>", { desc = "Set cc=80", noremap = true })
@@ -203,7 +194,6 @@ keymap.set("v", "<leader>rw", ":s/\\s\\+$//<CR>", { desc = "Remove whitespaces a
 
 -- HopWord
 keymap.set("n", "s", ":HopWord<CR>", { desc = "HopWord Toggle", noremap = true })
-
 
 vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
 vim.api.nvim_set_keymap('n', '<F5>', ":lua require'dap'.continue()<CR>", {noremap = true, silent = true})
@@ -216,3 +206,22 @@ vim.api.nvim_set_keymap('n', '<F10>', ":lua require'dap'.step_over()<CR>", {nore
 vim.api.nvim_set_keymap('n', '<F11>', ":lua require'dap'.step_into()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<F12>', ":lua require'dap'.step_out()<CR>", {noremap = true, silent = true})
 
+-- Spectre
+vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
+    desc = "Toggle Spectre"
+})
+vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+    desc = "Search current word"
+})
+vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+    desc = "Search current word"
+})
+vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+    desc = "Search on current file"
+})
+
+-- Telescope buffers
+vim.keymap.set("n", "<leader>b", ":Telescope buffers<CR>")
+
+-- noh
+keymap.set("n", "<leader>nh", ":noh<CR>", { desc = "No search highlight" })
